@@ -5,7 +5,7 @@ import heroImg from "../assets/foto.png";
 
 function Hero() {
   return (
-    <section className="h-[46rem] left-0 top-0 bg-[#F4F4F4] flex items-center justify-center">
+    <section className="left-0 top-0 bg-[#F4F4F4] flex items-center justify-center py-16">
       <div className="flex flex-col w-[69rem] h-[35rem] ">
         <div className="p1 flex flex-row flex-wrap-reverse justify-end items-stretch content-end gap-x-4 mb-10 basis-1/6">
           <div className="p1-b1 w-[11rem] flex flex-row">
