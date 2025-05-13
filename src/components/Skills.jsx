@@ -19,7 +19,7 @@ function Skills() {
   return (
     <section className="left-0 top-0 flex items-center justify-center py-16">
       <div className="w-[58.875rem]">
-        <p className="font-[Inter] font-medium text-5xl leading-[3.625rem] tracking-[0.01em] text-[#0A0A14] flex justify-center">
+        <p className="font-[Inter] font-medium text-4xl leading-[3.625rem] tracking-[0.01em] text-[#0A0A14] flex justify-center">
           Skills
         </p>
 

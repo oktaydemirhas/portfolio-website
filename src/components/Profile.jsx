@@ -11,16 +11,16 @@ function Profile() {
   return (
     <section className="left-0 top-0 bg-[#F4F4F4] flex flex-col justify-center items-center py-16">
       <div className="w-[69rem]">
-        <p className="font-[Inter] font-medium text-5xl leading-[3.625rem] tracking-[0.01em] text-[#0A0A14] flex justify-center pb-5">
+        <p className="font-[Inter] font-medium text-4xl leading-[3.625rem] tracking-[0.01em] text-[#0A0A14] flex justify-center pb-5">
           Profile
         </p>
       </div>
       {/*taşıyıcı*/}
       <div className="w-[69rem] flex mt-5">
-        <div className="sol-blok relative basis-1/2">
-          <div className="sol-blok-gribg absolute w-[31.25rem] h-[19.563rem] bg-[rgba(82,82,82,0.5)] rounded-[0.75rem] mt-2 ml-2"></div>
-          <div className="sol-blok-beyazbg relative w-[31.25rem] h-[19.563rem] bg-white rounded-[0.75rem]">
-            <div className="sol-blok-texts ml-12 w-[28rem] pt-10">
+        <div className="relative basis-1/2">
+          <div className="absolute w-[31.25rem] h-[19.563rem] bg-[rgba(82,82,82,0.5)] rounded-[0.75rem] mt-2 ml-2"></div>
+          <div className="relative w-[31.25rem] h-[19.563rem] bg-white rounded-[0.75rem]">
+            <div className="ml-12 w-[28rem] pt-10">
               <div className="mb-8 h-8 font-[Playfair] font-normal text-2xl leading-8 tracking-[0.01em] text-[#EA2678]">
                 Basic Information
               </div>
@@ -40,7 +40,7 @@ function Profile() {
           </div>
         </div>
 
-        <div className="sag-blok pl-12 flex justify-start items-center basis-1/2">
+        <div className="pl-12 flex justify-start items-center basis-1/2">
           <div className="w-[30rem]">
             <p className="font-[Playfair] font-normal text-[24px] leading-[32px] tracking-[0.01em] text-black">
               About me
