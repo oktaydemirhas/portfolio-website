@@ -57,7 +57,7 @@ function Hero() {
                   for{" "}
                   <span className="text-[#AF0C48]">UX, UI, & Web Design</span>{" "}
                   Project. <br />
-                  Invite me to join your team -{" "}
+                  Invite me to join your team →{" "}
                   <span className="text-[#AF0C48] underline underline-offset-4">
                     pratamaiosi@gmail.com
                   </span>
