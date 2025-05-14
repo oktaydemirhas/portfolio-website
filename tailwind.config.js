@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{html,js,jsx}",
   ],
+  darkMode: 'class',  // 👈 BURAYI EKLİYORUZ
   theme: {
     extend: {},
   },

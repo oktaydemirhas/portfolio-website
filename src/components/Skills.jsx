@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "../contexts/ThemeContext.jsx";
 import FigmaLogo from "../assets/figma-logo.png";
 import VsCodeLogo from "../assets/vscode-logo.png";
 import NodeLogo from "../assets/node-logo.png";
@@ -16,10 +17,20 @@ const mockSkills = [
 ];
 
 function Skills() {
+  const { theme } = useTheme();
+
   return (
-    <section className="left-0 top-0 flex items-center justify-center py-16">
+    <section
+      className={`left-0 top-0 flex items-center justify-center py-16 ${
+        theme === "dark" ? "bg-[#484148]" : ""
+      }`}
+    >
       <div className="w-[58.875rem]">
-        <p className="font-[Inter] font-medium text-4xl leading-[3.625rem] tracking-[0.01em] text-[#0A0A14] flex justify-center">
+        <p
+          className={`font-[Inter] font-medium text-4xl leading-[3.625rem] tracking-[0.01em] flex justify-center ${
+            theme === "light" ? "text-[#0A0A14]" : "text-white"
+          }`}
+        >
           Skills
         </p>
 
@@ -34,7 +45,11 @@ function Skills() {
                 alt={skill.name}
                 className="w-[7.5rem] h-[7.5rem] object-contain"
               />
-              <p className="mt-2 font-[Inter] font-medium text-[1.2rem] leading-[150%] text-[#777777]">
+              <p
+                className={`mt-2 font-[Inter] font-medium text-[1.2rem] leading-[150%] ${
+                  theme === "light" ? "text-[#777777]" : "text-[#D9D9D9]"
+                }`}
+              >
                 {skill.name}
               </p>
             </div>
