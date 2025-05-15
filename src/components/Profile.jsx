@@ -1,15 +1,13 @@
 import React from "react";
 import { useTheme } from "../contexts/ThemeContext.jsx";
-
-const profileInfos = [
-  { title: "Doğum Tarihi", info: "24.03.1996" },
-  { title: "İkamet Şehri", info: "Ankara" },
-  { title: "Eğitim Durumu", info: "Hacettepe Ünv. Biyoloji Lisans, 2016" },
-  { title: "Tercih Ettiğin Rol", info: "Frontend, UI" },
-];
+import { useLanguage } from "../contexts/LanguageContext.jsx";
+import siteData from "../data/data.js";
 
 function Profile() {
   const { theme } = useTheme();
+  const { language } = useLanguage();
+
+  const profileData = siteData[language].profileSection;
 
   return (
     <section
@@ -23,10 +21,9 @@ function Profile() {
             theme === "light" ? "text-[#0A0A14]" : "text-[#FFFFFF]"
           }`}
         >
-          Profile
+          {profileData.title}
         </p>
       </div>
-      {/*taşıyıcı*/}
       <div className="w-[69rem] flex mt-5">
         <div className="relative basis-1/2">
           <div className="absolute w-[31.25rem] h-[19.563rem] bg-[rgba(82,82,82,0.5)] rounded-[0.75rem] mt-2 ml-2"></div>
@@ -41,9 +38,9 @@ function Profile() {
                   theme === "light" ? "text-[#EA2678]" : "text-[#EA2678]"
                 }`}
               >
-                Basic Information
+                {profileData.basicInfoTitle}
               </div>
-              {profileInfos.map((infos, index) => (
+              {profileData.details.map((item, index) => (
                 <div key={index} className="flex flex-col mt-4">
                   <div className="flex flex-row">
                     <p
@@ -51,14 +48,14 @@ function Profile() {
                         theme === "light" ? "text-black" : "text-[#FFFFFF]"
                       }`}
                     >
-                      {infos.title}
+                      {item.label}
                     </p>
                     <p
                       className={`pr-14 h-[2rem] font-[Inter] font-normal text-[16px] leading-[18px] tracking-[0.01em] basis-3/5 ${
                         theme === "light" ? "text-black" : "text-[#FFFFFF]"
                       }`}
                     >
-                      {infos.info}
+                      {item.value}
                     </p>
                   </div>
                 </div>
@@ -74,23 +71,17 @@ function Profile() {
                 theme === "light" ? "text-black" : "text-[#FFFFFF]"
               }`}
             >
-              About me
+              {profileData.aboutMeTitle}
             </p>
             <p
               className={`font-[Inter] font-normal text-[18px] leading-[150%] tracking-[0.01em] pt-5 ${
                 theme === "light" ? "text-black" : "text-[#FFFFFF]"
               }`}
-            >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
-              aut, odit laborum aliquam voluptatum nisi mollitia. <br />
-              <br />
-              Mnima accusamus ratione soluta aperiam sit voluptate? Dicta quod
-              deserunt quam temporibus cumque magnam!
-            </p>
+              dangerouslySetInnerHTML={{ __html: profileData.bio }}
+            />
           </div>
         </div>
       </div>
-      {/*taşıyıcı*/}
     </section>
   );
 }

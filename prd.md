@@ -84,43 +84,45 @@ Bu belge, Workintech Frontend eğitimi Sprint Challenge kapsamında geliştirile
   - [x] `vite` ile React projesinin oluşturulması.
   - [x] Gerekli kütüphanelerin (`axios`, `react-toastify`, `tailwindcss` vb.) kurulması.
   - [x] Temel klasör yapısının oluşturulması (components, assets, data vb.).
-- [ ] **Görev 2: UI Tasarımı ve React JS Geliştirmeleri**
-  - [ ] **Temel Arayüz ve Component'ler:**
+- [x] **Görev 2: UI Tasarımı ve React JS Geliştirmeleri**
+
+  - [x] **Temel Arayüz ve Component'ler:**
     - [x] Ana sayfa (App.js) ve temel layout component'inin oluşturulması.
     - [x] Header component'inin oluşturulması ve stillendirilmesi (Logo/İsim, Dil Değiştirme, Karanlık Mod Toggle).
     - [x] Hero section component'inin oluşturulması ve stillendirilmesi.
     - [x] Footer (ve/veya Contact Section) component'inin oluşturulması ve stillendirilmesi.
   - [ ] **İçerik Component'leri (Görseldeki Yapıya Göre):**
     - [x] Skills (Beceriler) section component'inin oluşturulması ve stillendirilmesi (Örnek: JavaScript, React, Node.js vb. ikon ve başlıkları ile).
-    - [ ] Profile section component'inin oluşturulması ve stillendirilmesi (Temel Bilgiler ve Hakkımda metnini içerecek şekilde).
-    - [ ] Projects (Projelerim) section component'inin oluşturulması ve stillendirilmesi (Proje kartı yapısında: görsel, başlık, açıklama, teknoloji etiketleri, linkler).
-  - [ ] **Statik Veri Entegrasyonu:**
-    - [ ] `data.js` (veya `data.json`) dosyasının oluşturulması. Bu dosya, sağlanan örnek görseldeki gibi, `en` ve `tr` olmak üzere dil bazlı ana objeler içerecek. Her dil objesi altında da `heroSection`, `skillsSection`, `profileSection`, `projectsSection` gibi bölümlere ait metinler, linkler ve görsel yolları gibi tüm gösterilecek statik veriler bulunacak. **Sitedeki tüm içerik başlangıçta bu yerel dosyadan okunacaktır.**
-    - [ ] Verilerin component'lere aktarılması ve `map` ile listelenmesi (Özellikle Skills ve Projects bölümleri için).
-  - [ ] **Karanlık Mod Entegrasyonu:**
-    - [ ] Tema değiştirme (toggle) mekanizmasının UI'a eklenmesi.
-    - [ ] `useContext` ile tema state'inin global olarak yönetilmesi.
-    - [ ] CSS değişkenleri veya Tailwind `dark:` prefix'leri ile karanlık tema stillerinin uygulanması.
-    - [ ] Tema tercihinin `localStorage`'a kaydedilmesi ve okunması.
-  - [ ] **Dil Desteği Entegrasyonu (Türkçe/İngilizce):**
-    - [ ] Dil değiştirme mekanizmasının UI'a eklenmesi.
-    - [ ] `useContext` ile dil state'inin global olarak yönetilmesi.
-    - [ ] Metin içeriklerinin (statik `JSON` içinde veya ayrı dil dosyalarında) her iki dilde de hazırlanması.
-    - [ ] Seçilen dile göre içeriğin dinamik olarak gösterilmesi.
-    - [ ] Dil tercihinin `localStorage`'a kaydedilmesi ve okunması.
+    - [x] Profile section component'inin oluşturulması ve stillendirilmesi (Temel Bilgiler ve Hakkımda metnini içerecek şekilde).
+    - [x] Projects (Projelerim) section component'inin oluşturulması ve stillendirilmesi (Proje kartı yapısında: görsel, başlık, açıklama, teknoloji etiketleri, linkler).
+  - [x] **Karanlık Mod Entegrasyonu:**
+    - [x] Tema değiştirme (toggle) mekanizmasının UI'a eklenmesi.
+    - [x] `useContext` ile tema state'inin global olarak yönetilmesi.
+    - [x] CSS değişkenleri veya Tailwind `dark:` prefix'leri ile karanlık tema stillerinin uygulanması.
+    - [x] Tema tercihinin `localStorage`'a kaydedilmesi ve okunması.
+  - [x] **Statik Veri Entegrasyonu:**
+    - [x] `data.js` dosyasının oluşturulması. (Tamamlandı)
+    - [x] Verilerin component'lere aktarılması ve `map` ile listelenmesi (Hero, Skills, Profile, Projects, Footer için tamamlandı).
+  - [ ] **API Entegrasyonu (Axios):**
+    - [ ] `axios` ile `https://reqres.in/api/workintech` adresine, **yerel `data.js` dosyasındaki verilerin bir kısmını POST isteği ile göndererek** dış kaynakla iletişim kurabildiğini gösterme. Bu işlem, öncelikli olarak API kullanım yeteneğini sergilemek amaçlı olup, sitenin ana veri kaynağı bu API olmayacaktır.
+    - [ ] Gelen verinin bir bölümde gösterilmesi veya konsola yazdırılması.
+    - [ ] Temel yüklenme (loading) ve hata (error) durumlarının yönetimi.
+  - [x] **Dil Desteği Entegrasyonu (Türkçe/İngilizce):**
+    - [x] Dil değiştirme mekanizmasının UI'a eklenmesi. (Hero component'inde mevcut)
+    - [x] `useContext` ile dil state'inin global olarak yönetilmesi. (Tamamlandı)
+    - [x] Metin içeriklerinin (statik `JSON` içinde) her iki dilde de hazırlanması. (Hero, Skills, Profile, Projects, Footer için tamamlandı)
+    - [x] Seçilen dile göre içeriğin dinamik olarak gösterilmesi. (Hero, Skills, Profile, Projects, Footer için tamamlandı)
+    - [x] Dil tercihinin `localStorage`'a kaydedilmesi ve okunması. (LanguageContext içinde tamamlandı)
   - [ ] **Responsive Tasarım İyileştirmeleri:**
     - [ ] Tüm component'lerin ve sayfa düzeninin farklı ekran boyutlarında (mobil, tablet, masaüstü) test edilmesi.
     - [ ] Medya sorguları (media queries) veya Tailwind responsive prefix'leri (`sm:`, `md:`, `lg:`) ile gerekli düzenlemelerin yapılması.
   - [ ] **Ek Kütüphane Entegrasyonları:**
     - [ ] `react-toastify` ile form gönderimleri veya API etkileşimleri için kullanıcı bildirimlerinin eklenmesi.
-  - [ ] **API Entegrasyonu (Axios):**
-    - [ ] `axios` ile `https://reqres.in/api/workintech` adresine, **yerel `data.js` dosyasındaki verilerin bir kısmını POST isteği ile göndererek** dış kaynakla iletişim kurabildiğini gösterme. Bu işlem, öncelikli olarak API kullanım yeteneğini sergilemek amaçlı olup, sitenin ana veri kaynağı bu API olmayacaktır.
-    - [ ] Gelen verinin bir bölümde gösterilmesi veya konsola yazdırılması.
-    - [ ] Temel yüklenme (loading) ve hata (error) durumlarının yönetimi.
+
 - [ ] **Görev 3: Yayına Alma**
-  - [ ] Projenin `git` ile versiyon kontrol sistemine eklenmesi (GitHub).
-  - [ ] Projenin Vercel veya Render.com'a deploy edilmesi.
-  - [ ] Canlı linkin çalışır durumda olduğunun kontrol edilmesi.
+  - [x] Projenin `git` ile versiyon kontrol sistemine eklenmesi (GitHub).
+  - [x] Projenin Vercel veya Render.com'a deploy edilmesi.
+  - [x] Canlı linkin çalışır durumda olduğunun kontrol edilmesi.
   - [ ] Diğer projelerin linklerinin portfolyo sitesine eklenmesi.
 - [ ] **Sunuma Hazırlık:**
   - [ ] 4 dakikalık sunum içeriğinin hazırlanması (arayüz demosu, önemli kod bölümleri, veri akışı).

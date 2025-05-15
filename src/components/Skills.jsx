@@ -1,23 +1,29 @@
 import React from "react";
 import { useTheme } from "../contexts/ThemeContext.jsx";
-import FigmaLogo from "../assets/figma-logo.png";
-import VsCodeLogo from "../assets/vscode-logo.png";
-import NodeLogo from "../assets/node-logo.png";
-import ReduxLogo from "../assets/redux-logo.png";
-import ReactLogo from "../assets/react-logo.png";
-import JavascriptLogo from "../assets/js-logo.png";
+import { useLanguage } from "../contexts/LanguageContext.jsx";
+import siteData from "../data/data.js";
 
-const mockSkills = [
-  { name: "JAVASCRIPT", icon: JavascriptLogo },
-  { name: "REACT", icon: ReactLogo },
-  { name: "REDUX", icon: ReduxLogo },
-  { name: "NODE", icon: NodeLogo },
-  { name: "VS CODE", icon: VsCodeLogo },
-  { name: "FIGMA", icon: FigmaLogo },
-];
+import localFigmaLogo from "../assets/figma-logo.png";
+import localVsCodeLogo from "../assets/vscode-logo.png";
+import localNodeLogo from "../assets/node-logo.png";
+import localReduxLogo from "../assets/redux-logo.png";
+import localReactLogo from "../assets/react-logo.png";
+import localJavascriptLogo from "../assets/js-logo.png";
+
+const icons = {
+  FigmaLogo: localFigmaLogo,
+  VsCodeLogo: localVsCodeLogo,
+  NodeLogo: localNodeLogo,
+  ReduxLogo: localReduxLogo,
+  ReactLogo: localReactLogo,
+  JavascriptLogo: localJavascriptLogo,
+};
 
 function Skills() {
   const { theme } = useTheme();
+  const { language } = useLanguage();
+
+  const skillsData = siteData[language].skillsSection;
 
   return (
     <section
@@ -31,17 +37,17 @@ function Skills() {
             theme === "light" ? "text-[#0A0A14]" : "text-white"
           }`}
         >
-          Skills
+          {skillsData.title}
         </p>
 
         <div className="flex flex-wrap justify-center items-center gap-10 pt-10 w-full">
-          {mockSkills.map((skill, index) => (
+          {skillsData.skills.map((skill, index) => (
             <div
               key={index}
               className="flex flex-col items-center w-[7.5rem] h-[10.375rem]"
             >
               <img
-                src={skill.icon}
+                src={icons[skill.iconKey]}
                 alt={skill.name}
                 className="w-[7.5rem] h-[7.5rem] object-contain"
               />

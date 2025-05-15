@@ -1,11 +1,27 @@
 import React from "react";
 import { useTheme } from "../contexts/ThemeContext.jsx";
-import linkedinIcon from "../assets/LinkedIn.png";
-import githubIcon from "../assets/github.png";
-import heroImg from "../assets/foto.png";
+import { useLanguage } from "../contexts/LanguageContext.jsx";
+import siteData from "../data/data.js";
+import localLinkedinIcon from "../assets/LinkedIn.png";
+import localGithubIcon from "../assets/github.png";
+import localHeroImg from "../assets/foto.png";
+
+const icons = {
+  linkedinIcon: localLinkedinIcon,
+  githubIcon: localGithubIcon,
+};
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
+  const { language, toggleLanguage } = useLanguage();
+
+  const heroData = siteData[language].heroSection;
+  const currentProfileImage =
+    heroData.profileImage === "../assets/foto.png"
+      ? localHeroImg
+      : heroData.profileImage;
+
+  const langToggleData = heroData.languageToggle;
 
   return (
     <section
@@ -56,21 +72,43 @@ function Hero() {
           >
             |
           </div>
-          <div className="p1-b3">
-            <span
-              className={`font-[Inter] font-bold text-base ${
-                theme === "light" ? "text-[#E92577]" : "text-[#E92577]"
-              }`}
-            >
-              TÜRKÇE
-            </span>
-            <span
-              className={`font-[Inter] font-bold text-base ${
-                theme === "light" ? "text-[#777777]" : "text-gray-400"
-              }`}
-            >
-              'YE GEÇ
-            </span>
+          <div
+            className="p1-b3"
+            onClick={toggleLanguage}
+            style={{ cursor: "pointer" }}
+          >
+            {language === "en" ? (
+              <>
+                <span
+                  className={`font-[Inter] font-bold text-base text-[#E92577]`}
+                >
+                  {langToggleData.vurguluKisim}
+                </span>
+                <span
+                  className={`font-[Inter] font-bold text-base ${
+                    theme === "light" ? "text-[#777777]" : "text-gray-400"
+                  }`}
+                >
+                  {langToggleData.kalanKisim}
+                </span>
+              </>
+            ) : (
+              /* language === 'tr' */
+              <>
+                <span
+                  className={`font-[Inter] font-bold text-base ${
+                    theme === "light" ? "text-[#777777]" : "text-gray-400"
+                  }`}
+                >
+                  {langToggleData.kalanKisim}
+                </span>
+                <span
+                  className={`font-[Inter] font-bold text-base text-[#E92577]`}
+                >
+                  {langToggleData.vurguluKisim}
+                </span>
+              </>
+            )}
           </div>
         </div>
 
@@ -82,37 +120,40 @@ function Hero() {
                   theme === "light" ? "text-black" : "text-[#FFFFFF]"
                 }`}
               >
-                Hi! 👋
+                {heroData.greeting}
               </p>
               <p
                 className={`font-[Inter] font-medium text-[42px] leading-[64px] m-[-0.25rem] ${
                   theme === "light" ? "text-black" : "text-[#FFFFFF]"
                 }`}
               >
-                I'm Almila. I'm a full-stack developer. I can craft solid and
-                scalable frontend products. Let's meet!
+                {heroData.nameIntro} {heroData.roleDescription}{" "}
+                {heroData.invitation}
               </p>
             </div>
             <div className="p2-b1-o2">
               <div className="p2-b1-o2-pu1 flex gap-4 pl-0 py-4 pr-4">
-                <a href="#" className="block ml-0">
-                  <img
-                    src={linkedinIcon}
-                    alt="linkedin"
-                    className={`w-8 h-8 ${
-                      theme === "dark" ? "filter invert" : ""
-                    }`}
-                  />
-                </a>
-                <a href="#" className="block">
-                  <img
-                    src={githubIcon}
-                    alt="github"
-                    className={`w-8 h-8 ${
-                      theme === "dark" ? "filter invert" : ""
-                    }`}
-                  />
-                </a>
+                {heroData.socialLinks.map((link) => (
+                  <a
+                    href={link.url}
+                    key={link.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block ml-0"
+                  >
+                    <img
+                      src={icons[link.iconKey]}
+                      alt={link.name}
+                      className={`w-8 h-8 ${
+                        theme === "dark" &&
+                        (link.iconKey === "linkedinIcon" ||
+                          link.iconKey === "githubIcon")
+                          ? "filter invert"
+                          : ""
+                      }`}
+                    />
+                  </a>
+                ))}
               </div>
               <div className="p2-b1-o2-pu2">
                 <p
@@ -120,37 +161,37 @@ function Hero() {
                     theme === "light" ? "text-[#000000]" : "text-[#FFFFFF]"
                   }`}
                 >
-                  Currently{" "}
+                  {heroData.status.currently}{" "}
                   <span
                     className={`${
                       theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
                     }`}
                   >
-                    Freelancing
+                    {heroData.status.statusText}
                   </span>{" "}
-                  for{" "}
+                  {heroData.status.forText}{" "}
                   <span
                     className={`${
                       theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
                     }`}
                   >
-                    UX, UI, & Web Design
+                    {heroData.status.projectDetails}
                   </span>{" "}
-                  Project. <br />
-                  Invite me to join your team →{" "}
+                  <br />
+                  {heroData.status.invitationPrefix}{" "}
                   <span
                     className={`underline underline-offset-4 ${
                       theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
                     }`}
                   >
-                    pratamaiosi@gmail.com
+                    {heroData.status.email}
                   </span>
                 </p>
               </div>
             </div>
           </div>
           <div className="p2-b2 flex flex-row-reverse items-center basis-2/5 ">
-            <img src={heroImg} alt="hero-right" className="mb-8" />
+            <img src={currentProfileImage} alt="hero-right" className="mb-8" />
           </div>
         </div>
       </div>
