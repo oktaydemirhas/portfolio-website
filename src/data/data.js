@@ -97,9 +97,9 @@ const siteData = {
       profileImage: "../assets/foto.png", // Adjusted path
       status: {
         currently: "Şu anda",
-        statusText: "Serbest Çalışıyorum",
+        projectDetails: "UX, UI, & Web Tasarım Projeleri",
         forText: "için",
-        projectDetails: "UX, UI, & Web Tasarım Projesi.",
+        statusText: "serbest çalışıyorum.",
         invitationPrefix: "Beni takımınıza davet edin →",
         email: "mail.adresiniz@example.com"
       },

@@ -162,21 +162,55 @@ function Hero() {
                   }`}
                 >
                   {heroData.status.currently}{" "}
-                  <span
-                    className={`${
-                      theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
-                    }`}
-                  >
-                    {heroData.status.statusText}
-                  </span>{" "}
-                  {heroData.status.forText}{" "}
-                  <span
-                    className={`${
-                      theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
-                    }`}
-                  >
-                    {heroData.status.projectDetails}
-                  </span>{" "}
+                  {language === "en" ? (
+                    <>
+                      <span
+                        className={`${
+                          theme === "light"
+                            ? "text-[#AF0C48]"
+                            : "text-[#EA2678]"
+                        }`}
+                      >
+                        {heroData.status.statusText} {/* EN: Freelancing */}
+                      </span>{" "}
+                      {heroData.status.forText}{" "}
+                      <span
+                        className={`${
+                          theme === "light"
+                            ? "text-[#AF0C48]"
+                            : "text-[#EA2678]"
+                        }`}
+                      >
+                        {heroData.status.projectDetails}{" "}
+                        {/* EN: UX, UI, & Web Design Project. */}
+                      </span>
+                    </>
+                  ) : (
+                    /* language === 'tr' */
+                    <>
+                      <span
+                        className={`${
+                          theme === "light"
+                            ? "text-[#AF0C48]"
+                            : "text-[#EA2678]"
+                        }`}
+                      >
+                        {heroData.status.projectDetails}{" "}
+                        {/* TR: UX, UI, & Web Tasarım Projeleri */}
+                      </span>{" "}
+                      {heroData.status.forText}{" "}
+                      <span
+                        className={`${
+                          theme === "light"
+                            ? "text-[#AF0C48]"
+                            : "text-[#EA2678]"
+                        }`}
+                      >
+                        {heroData.status.statusText}{" "}
+                        {/* TR: serbest çalışıyorum. */}
+                      </span>
+                    </>
+                  )}{" "}
                   <br />
                   {heroData.status.invitationPrefix}{" "}
                   <span

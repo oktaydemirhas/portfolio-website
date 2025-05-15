@@ -103,16 +103,18 @@ Bu belge, Workintech Frontend eğitimi Sprint Challenge kapsamında geliştirile
   - [x] **Statik Veri Entegrasyonu:**
     - [x] `data.js` dosyasının oluşturulması. (Tamamlandı)
     - [x] Verilerin component'lere aktarılması ve `map` ile listelenmesi (Hero, Skills, Profile, Projects, Footer için tamamlandı).
-  - [ ] **API Entegrasyonu (Axios):**
-    - [ ] `axios` ile `https://reqres.in/api/workintech` adresine, **yerel `data.js` dosyasındaki verilerin bir kısmını POST isteği ile göndererek** dış kaynakla iletişim kurabildiğini gösterme. Bu işlem, öncelikli olarak API kullanım yeteneğini sergilemek amaçlı olup, sitenin ana veri kaynağı bu API olmayacaktır.
-    - [ ] Gelen verinin bir bölümde gösterilmesi veya konsola yazdırılması.
-    - [ ] Temel yüklenme (loading) ve hata (error) durumlarının yönetimi.
   - [x] **Dil Desteği Entegrasyonu (Türkçe/İngilizce):**
     - [x] Dil değiştirme mekanizmasının UI'a eklenmesi. (Hero component'inde mevcut)
     - [x] `useContext` ile dil state'inin global olarak yönetilmesi. (Tamamlandı)
     - [x] Metin içeriklerinin (statik `JSON` içinde) her iki dilde de hazırlanması. (Hero, Skills, Profile, Projects, Footer için tamamlandı)
     - [x] Seçilen dile göre içeriğin dinamik olarak gösterilmesi. (Hero, Skills, Profile, Projects, Footer için tamamlandı)
     - [x] Dil tercihinin `localStorage`'a kaydedilmesi ve okunması. (LanguageContext içinde tamamlandı)
+  - [ ] **API Entegrasyonu (Axios):**
+
+    - [ ] `axios` ile `https://reqres.in/api/workintech` adresine, **yerel `data.js` dosyasındaki verilerin bir kısmını POST isteği ile göndererek** dış kaynakla iletişim kurabildiğini gösterme. Bu işlem, öncelikli olarak API kullanım yeteneğini sergilemek amaçlı olup, sitenin ana veri kaynağı bu API olmayacaktır.
+    - [ ] Gelen verinin bir bölümde gösterilmesi veya konsola yazdırılması.
+    - [ ] Temel yüklenme (loading) ve hata (error) durumlarının yönetimi.
+
   - [ ] **Responsive Tasarım İyileştirmeleri:**
     - [ ] Tüm component'lerin ve sayfa düzeninin farklı ekran boyutlarında (mobil, tablet, masaüstü) test edilmesi.
     - [ ] Medya sorguları (media queries) veya Tailwind responsive prefix'leri (`sm:`, `md:`, `lg:`) ile gerekli düzenlemelerin yapılması.
