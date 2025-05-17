@@ -2,12 +2,21 @@ import React from "react";
 import { useTheme } from "../contexts/ThemeContext.jsx";
 import { useLanguage } from "../contexts/LanguageContext.jsx";
 import siteData from "../data/data.js";
+import { toast } from "react-toastify";
 
 function Footer() {
   const { theme } = useTheme();
   const { language } = useLanguage();
 
   const footerData = siteData[language].footer;
+
+  const showNotification = () => {
+    toast("Bu basit bir bildirim!"); // Varsayılan (info) bildirim
+    // toast.success("Başarılı işlem!");
+    // toast.error("Bir hata oluştu!");
+    // toast.warn("Uyarı mesajı!");
+    // toast.info("Bilgilendirme mesajı.");
+  };
 
   return (
     <footer
@@ -38,6 +47,7 @@ function Footer() {
           ))}
         </div>
       </div>
+      <button onClick={showNotification}>Bildirim Göster</button>
     </footer>
   );
 }
