@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const LanguageContext = createContext();
 
@@ -10,7 +11,15 @@ export const LanguageProvider = ({ children }) => {
   });
 
   const toggleLanguage = () => {
-    setLanguage((prevLang) => (prevLang === "en" ? "tr" : "en"));
+    setLanguage((prevLang) => {
+      const newLang = prevLang === "en" ? "tr" : "en";
+      if (newLang === "tr") {
+        toast.success("Türkçe Diline Geçildi.");
+      } else {
+        toast.success("İngilizce Diline Geçildi.");
+      }
+      return newLang;
+    });
   };
 
   // localStorage'ı güncelle

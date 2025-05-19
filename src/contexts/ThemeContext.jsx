@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const ThemeContext = createContext();
 
@@ -16,7 +17,15 @@ export const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === "light" ? "dark" : "light";
+      if (newTheme === "dark") {
+        toast.success("Dark Mod Aktif Edildi.");
+      } else {
+        toast.success("Light Mode Aktif Edildi.");
+      }
+      return newTheme;
+    });
   };
 
   return (
