@@ -91,7 +91,7 @@ Bu belge, Workintech Frontend eğitimi Sprint Challenge kapsamında geliştirile
     - [x] Header component'inin oluşturulması ve stillendirilmesi (Logo/İsim, Dil Değiştirme, Karanlık Mod Toggle).
     - [x] Hero section component'inin oluşturulması ve stillendirilmesi.
     - [x] Footer (ve/veya Contact Section) component'inin oluşturulması ve stillendirilmesi.
-  - [ ] **İçerik Component'leri (Görseldeki Yapıya Göre):**
+  - [x] **İçerik Component'leri (Görseldeki Yapıya Göre):**
     - [x] Skills (Beceriler) section component'inin oluşturulması ve stillendirilmesi (Örnek: JavaScript, React, Node.js vb. ikon ve başlıkları ile).
     - [x] Profile section component'inin oluşturulması ve stillendirilmesi (Temel Bilgiler ve Hakkımda metnini içerecek şekilde).
     - [x] Projects (Projelerim) section component'inin oluşturulması ve stillendirilmesi (Proje kartı yapısında: görsel, başlık, açıklama, teknoloji etiketleri, linkler).
@@ -109,17 +109,19 @@ Bu belge, Workintech Frontend eğitimi Sprint Challenge kapsamında geliştirile
     - [x] Metin içeriklerinin (statik `JSON` içinde) her iki dilde de hazırlanması. (Hero, Skills, Profile, Projects, Footer için tamamlandı)
     - [x] Seçilen dile göre içeriğin dinamik olarak gösterilmesi. (Hero, Skills, Profile, Projects, Footer için tamamlandı)
     - [x] Dil tercihinin `localStorage`'a kaydedilmesi ve okunması. (LanguageContext içinde tamamlandı)
-  - [ ] **API Entegrasyonu (Axios):**
+  - [x] **Ek Kütüphane Entegrasyonları:**
 
-    - [ ] `axios` ile `https://reqres.in/api/workintech` adresine, **yerel `data.js` dosyasındaki verilerin bir kısmını POST isteği ile göndererek** dış kaynakla iletişim kurabildiğini gösterme. Bu işlem, öncelikli olarak API kullanım yeteneğini sergilemek amaçlı olup, sitenin ana veri kaynağı bu API olmayacaktır.
-    - [ ] Gelen verinin bir bölümde gösterilmesi veya konsola yazdırılması.
-    - [ ] Temel yüklenme (loading) ve hata (error) durumlarının yönetimi.
+    - [x] `react-toastify` ile form gönderimleri veya API etkileşimleri için kullanıcı bildirimlerinin eklenmesi.
 
-  - [ ] **Responsive Tasarım İyileştirmeleri:**
-    - [ ] Tüm component'lerin ve sayfa düzeninin farklı ekran boyutlarında (mobil, tablet, masaüstü) test edilmesi.
-    - [ ] Medya sorguları (media queries) veya Tailwind responsive prefix'leri (`sm:`, `md:`, `lg:`) ile gerekli düzenlemelerin yapılması.
-  - [ ] **Ek Kütüphane Entegrasyonları:**
-    - [ ] `react-toastify` ile form gönderimleri veya API etkileşimleri için kullanıcı bildirimlerinin eklenmesi.
+  - [x] **API Entegrasyonu (Axios):**
+
+    - [x] `axios` ile `https://reqres.in/api/workintech` adresine, **yerel `data.js` dosyasındaki verilerin bir kısmını POST isteği ile göndererek** dış kaynakla iletişim kurabildiğini gösterme. Bu işlem, öncelikli olarak API kullanım yeteneğini sergilemek amaçlı olup, sitenin ana veri kaynağı bu API olmayacaktır.
+    - [x] Gelen verinin bir bölümde gösterilmesi veya konsola yazdırılması.
+    - [x] Temel yüklenme (loading) ve hata (error) durumlarının yönetimi.
+
+  - [x] **Responsive Tasarım İyileştirmeleri:**
+    - [x] Tüm component'lerin ve sayfa düzeninin farklı ekran boyutlarında (mobil, tablet, masaüstü) test edilmesi.
+    - [x] Medya sorguları (media queries) veya Tailwind responsive prefix'leri (`sm:`, `md:`, `lg:`) ile gerekli düzenlemelerin yapılması.
 
 - [ ] **Görev 3: Yayına Alma**
   - [x] Projenin `git` ile versiyon kontrol sistemine eklenmesi (GitHub).

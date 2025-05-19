@@ -27,33 +27,33 @@ function Skills() {
 
   return (
     <section
-      className={`left-0 top-0 flex items-center justify-center py-16 ${
-        theme === "dark" ? "bg-[#484148]" : ""
+      className={`flex flex-col justify-center items-center py-12 sm:py-16 ${
+        theme === "dark" ? "bg-[#484148] text-white" : "bg-gray-50 text-black"
       }`}
     >
-      <div className="w-[58.875rem]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl w-full">
         <p
-          className={`font-[Inter] font-medium text-4xl leading-[3.625rem] tracking-[0.01em] flex justify-center ${
+          className={`font-[Inter] font-medium text-3xl sm:text-4xl leading-tight sm:leading-[3.625rem] tracking-[0.01em] text-center pb-8 sm:pb-10 ${
             theme === "light" ? "text-[#0A0A14]" : "text-white"
           }`}
         >
           {skillsData.title}
         </p>
 
-        <div className="flex flex-wrap justify-center items-center gap-10 pt-10 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 md:gap-10 place-items-center">
           {skillsData.skills.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center w-[7.5rem] h-[10.375rem]"
+              className="flex flex-col items-center justify-center text-center p-3 sm:p-4 transition-transform hover:scale-105 w-full h-full"
             >
               <img
                 src={icons[skill.iconKey]}
                 alt={skill.name}
-                className="w-[7.5rem] h-[7.5rem] object-contain"
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain mb-2 sm:mb-3"
               />
               <p
-                className={`mt-2 font-[Inter] font-medium text-[1.2rem] leading-[150%] ${
-                  theme === "light" ? "text-[#777777]" : "text-[#D9D9D9]"
+                className={`font-[Inter] font-medium text-xs sm:text-sm md:text-base leading-snug ${
+                  theme === "light" ? "text-gray-600" : "text-gray-300"
                 }`}
               >
                 {skill.name}

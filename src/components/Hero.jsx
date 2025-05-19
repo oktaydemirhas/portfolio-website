@@ -25,16 +25,15 @@ function Hero() {
 
   return (
     <section
-      className={`left-0 top-0 flex items-center justify-center py-16 ${
+      className={`flex items-center justify-center py-12 sm:py-16 ${
         theme === "light" ? "bg-[#F4F4F4]" : "bg-[#2A262B] text-white"
       }`}
     >
-      <div className="flex flex-col w-[69rem] h-[35rem] ">
-        <div className="p1 flex flex-row flex-wrap-reverse justify-end items-stretch content-end gap-x-4 mb-10 basis-1/6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col max-w-6xl">
+        <div className="flex flex-row flex-wrap-reverse justify-center sm:justify-end items-center gap-x-4 mb-8 sm:mb-10">
           <div
-            className="p1-b1 w-[11rem] flex flex-row items-center"
+            className="p1-b1 w-auto sm:w-[11rem] flex flex-row items-center cursor-pointer mb-4 sm:mb-0"
             onClick={toggleTheme}
-            style={{ cursor: "pointer" }}
           >
             <div
               className={`w-14 h-6 rounded-full flex items-center p-1 ${
@@ -57,7 +56,7 @@ function Hero() {
             </div>
             <div>
               <p
-                className={`pl-3 font-[Inter] font-bold text-base ${
+                className={`pl-3 font-[Inter] font-bold text-sm sm:text-base ${
                   theme === "light" ? "text-[#777777]" : "text-gray-300"
                 }`}
               >
@@ -66,26 +65,22 @@ function Hero() {
             </div>
           </div>
           <div
-            className={`p1-b2 pr-2 font-[Inter] font-bold text-base ${
+            className={`hidden sm:block p1-b2 pr-2 font-[Inter] font-bold text-base ${
               theme === "light" ? "text-[#777777]" : "text-gray-400"
             }`}
           >
             |
           </div>
-          <div
-            className="p1-b3"
-            onClick={toggleLanguage}
-            style={{ cursor: "pointer" }}
-          >
+          <div className="p1-b3 cursor-pointer" onClick={toggleLanguage}>
             {language === "en" ? (
               <>
                 <span
-                  className={`font-[Inter] font-bold text-base text-[#E92577]`}
+                  className={`font-[Inter] font-bold text-sm sm:text-base text-[#E92577]`}
                 >
                   {langToggleData.vurguluKisim}
                 </span>
                 <span
-                  className={`font-[Inter] font-bold text-base ${
+                  className={`font-[Inter] font-bold text-sm sm:text-base ${
                     theme === "light" ? "text-[#777777]" : "text-gray-400"
                   }`}
                 >
@@ -93,17 +88,16 @@ function Hero() {
                 </span>
               </>
             ) : (
-              /* language === 'tr' */
               <>
                 <span
-                  className={`font-[Inter] font-bold text-base ${
+                  className={`font-[Inter] font-bold text-sm sm:text-base ${
                     theme === "light" ? "text-[#777777]" : "text-gray-400"
                   }`}
                 >
                   {langToggleData.kalanKisim}
                 </span>
                 <span
-                  className={`font-[Inter] font-bold text-base text-[#E92577]`}
+                  className={`font-[Inter] font-bold text-sm sm:text-base text-[#E92577]`}
                 >
                   {langToggleData.vurguluKisim}
                 </span>
@@ -112,18 +106,18 @@ function Hero() {
           </div>
         </div>
 
-        <div className="p2 flex flex-row flex-nowrap justify-start items-stretch content-between basis-5/6">
-          <div className="p2-b1 flex flex-col flex-nowrap justify-between items-stretch content-stretch gap-4 basis-3/5 ">
-            <div className="p2-b1-o1">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+          <div className="flex flex-col gap-6 lg:gap-8 text-center lg:text-left lg:basis-3/5">
+            <div>
               <p
-                className={`font-[Inter] font-normal text-[1.875rem] leading-[2.25rem] m-[-0.25rem] ${
+                className={`font-[Inter] font-normal text-xl sm:text-2xl md:text-[1.875rem] leading-snug sm:leading-tight ${
                   theme === "light" ? "text-black" : "text-[#FFFFFF]"
                 }`}
               >
                 {heroData.greeting}
               </p>
               <p
-                className={`font-[Inter] font-medium text-[42px] leading-[64px] m-[-0.25rem] ${
+                className={`font-[Inter] font-medium text-3xl sm:text-4xl md:text-[42px] leading-tight md:leading-[54px] mt-1 ${
                   theme === "light" ? "text-black" : "text-[#FFFFFF]"
                 }`}
               >
@@ -131,20 +125,20 @@ function Hero() {
                 {heroData.invitation}
               </p>
             </div>
-            <div className="p2-b1-o2">
-              <div className="p2-b1-o2-pu1 flex gap-4 pl-0 py-4 pr-4">
+            <div className="flex flex-col gap-4">
+              <div className="flex gap-4 justify-center lg:justify-start">
                 {heroData.socialLinks.map((link) => (
                   <a
                     href={link.url}
                     key={link.name}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block ml-0"
+                    className="block"
                   >
                     <img
                       src={icons[link.iconKey]}
                       alt={link.name}
-                      className={`w-8 h-8 ${
+                      className={`w-7 h-7 sm:w-8 sm:h-8 transition-transform hover:scale-110 ${
                         theme === "dark" &&
                         (link.iconKey === "linkedinIcon" ||
                           link.iconKey === "githubIcon")
@@ -155,77 +149,71 @@ function Hero() {
                   </a>
                 ))}
               </div>
-              <div className="p2-b1-o2-pu2">
-                <p
-                  className={`font-[Inter] font-normal text-[1rem] leading-[2rem] m-[-0.15rem] ${
-                    theme === "light" ? "text-[#000000]" : "text-[#FFFFFF]"
+              <p
+                className={`font-[Inter] font-normal text-sm sm:text-base leading-relaxed ${
+                  theme === "light" ? "text-gray-700" : "text-gray-300"
+                }`}
+              >
+                {heroData.status.currently}{" "}
+                {language === "en" ? (
+                  <>
+                    <span
+                      className={`${
+                        theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
+                      } font-semibold`}
+                    >
+                      {heroData.status.statusText}
+                    </span>{" "}
+                    {heroData.status.forText}{" "}
+                    <span
+                      className={`${
+                        theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
+                      } font-semibold`}
+                    >
+                      {heroData.status.projectDetails}{" "}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span
+                      className={`${
+                        theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
+                      } font-semibold`}
+                    >
+                      {heroData.status.projectDetails}{" "}
+                    </span>{" "}
+                    {heroData.status.forText}{" "}
+                    <span
+                      className={`${
+                        theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
+                      } font-semibold`}
+                    >
+                      {heroData.status.statusText}{" "}
+                    </span>
+                  </>
+                )}{" "}
+                <br className="hidden sm:inline" />
+                {heroData.status.invitationPrefix}{" "}
+                <a
+                  href={`mailto:${heroData.status.email}`}
+                  className={`underline underline-offset-4 font-semibold transition-colors ${
+                    theme === "light"
+                      ? "text-[#AF0C48] hover:text-[#8a0a3a]"
+                      : "text-[#EA2678] hover:text-[#c71f66]"
                   }`}
                 >
-                  {heroData.status.currently}{" "}
-                  {language === "en" ? (
-                    <>
-                      <span
-                        className={`${
-                          theme === "light"
-                            ? "text-[#AF0C48]"
-                            : "text-[#EA2678]"
-                        }`}
-                      >
-                        {heroData.status.statusText} {/* EN: Freelancing */}
-                      </span>{" "}
-                      {heroData.status.forText}{" "}
-                      <span
-                        className={`${
-                          theme === "light"
-                            ? "text-[#AF0C48]"
-                            : "text-[#EA2678]"
-                        }`}
-                      >
-                        {heroData.status.projectDetails}{" "}
-                        {/* EN: UX, UI, & Web Design Project. */}
-                      </span>
-                    </>
-                  ) : (
-                    /* language === 'tr' */
-                    <>
-                      <span
-                        className={`${
-                          theme === "light"
-                            ? "text-[#AF0C48]"
-                            : "text-[#EA2678]"
-                        }`}
-                      >
-                        {heroData.status.projectDetails}{" "}
-                        {/* TR: UX, UI, & Web Tasarım Projeleri */}
-                      </span>{" "}
-                      {heroData.status.forText}{" "}
-                      <span
-                        className={`${
-                          theme === "light"
-                            ? "text-[#AF0C48]"
-                            : "text-[#EA2678]"
-                        }`}
-                      >
-                        {heroData.status.statusText}{" "}
-                        {/* TR: serbest çalışıyorum. */}
-                      </span>
-                    </>
-                  )}{" "}
-                  <br />
-                  {heroData.status.invitationPrefix}{" "}
-                  <span
-                    className={`underline underline-offset-4 ${
-                      theme === "light" ? "text-[#AF0C48]" : "text-[#EA2678]"
-                    }`}
-                  >
-                    {heroData.status.email}
-                  </span>
-                </p>
-              </div>
+                  {heroData.status.email}
+                </a>
+              </p>
             </div>
           </div>
-          <div className="p2-b2 flex flex-row-reverse items-center basis-2/5 ">
-            <img src={currentProfileImage} alt="hero-right" className="mb-8" />
+
+          <div className="flex justify-center lg:justify-end items-center lg:basis-2/5 mt-8 lg:mt-0 order-first lg:order-last">
+            <img
+              src={currentProfileImage}
+              alt="hero-right"
+              className="w-4/5 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </div>
