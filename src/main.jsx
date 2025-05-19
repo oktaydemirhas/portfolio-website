@@ -19,9 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           newestOnTop={false} // Yeni bildirimler üste mi gelsin?
           closeOnClick // Bildirime tıklayınca kapansın mı?
           rtl={false} // Sağdan sola dil desteği
-          pauseOnFocusLoss // Pencere odağını kaybedince duraklat
-          draggable // Sürüklenebilir bildirimler
-          pauseOnHover // Üzerine gelince duraklat
+          //pauseOnFocusLoss // Pencere odağını kaybedince duraklat
+          //draggable // Sürüklenebilir bildirimler
+          //pauseOnHover // Üzerine gelince duraklat
           theme="light" // Tema: "light", "dark", veya "colored"
         />
       </LanguageProvider>
