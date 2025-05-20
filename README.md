@@ -51,6 +51,12 @@ This project is a personal portfolio website designed to showcase my skills, pro
 _(Add screenshots or a brief description of how to navigate and use the website here. For example, describe key sections like "Projects", "About Me", "Contact".)_
 
 ![1](https://github.com/user-attachments/assets/3498a2ce-ed14-41ba-a007-ab40f6a440e8)
+![2](https://github.com/user-attachments/assets/7d43ea97-07ed-44a4-aa73-e106db56ed43)
+![3](https://github.com/user-attachments/assets/cb01d99d-4c19-4d28-86bb-cd998d374c46)
+![4](https://github.com/user-attachments/assets/93d37ecc-c325-4c22-a51b-312ddb502a49)
+![5](https://github.com/user-attachments/assets/68c12490-b23b-4a4f-9dd8-9d98885d82c1)
+![6](https://github.com/user-attachments/assets/2b1a8300-fb94-4919-b756-ffc33d45615a)
+
 
 ## Contribution Guidelines
 
@@ -115,6 +121,11 @@ Bu proje, becerilerimi, projelerimi ve deneyimlerimi potansiyel işverenlere ve 
 _(Buraya web sitesinde nasıl gezileceğine ve kullanılacağına dair ekran görüntüleri veya kısa bir açıklama ekleyin. Örneğin, "Projeler", "Hakkımda", "İletişim" gibi önemli bölümleri açıklayın.)_
 
 ![1](https://github.com/user-attachments/assets/3498a2ce-ed14-41ba-a007-ab40f6a440e8)
+![2](https://github.com/user-attachments/assets/7d43ea97-07ed-44a4-aa73-e106db56ed43)
+![3](https://github.com/user-attachments/assets/cb01d99d-4c19-4d28-86bb-cd998d374c46)
+![4](https://github.com/user-attachments/assets/93d37ecc-c325-4c22-a51b-312ddb502a49)
+![5](https://github.com/user-attachments/assets/68c12490-b23b-4a4f-9dd8-9d98885d82c1)
+![6](https://github.com/user-attachments/assets/2b1a8300-fb94-4919-b756-ffc33d45615a)
 
 ## Katkıda Bulunma Rehberi
 
